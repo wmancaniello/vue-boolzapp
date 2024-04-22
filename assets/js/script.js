@@ -168,9 +168,16 @@ createApp({
           ],
         },
       ],
+      //Contatto selezionato
+      selectedContact: "",
     };
   },
   methods: {
     // FUNZIONI
+    // Click per selezionare il contatto
+    selectContact(contact) {
+      this.selectedContact = contact;
+      console.log(contact.avatar);
+    },
   },
 }).mount("#app");
