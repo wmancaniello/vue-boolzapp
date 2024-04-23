@@ -1,5 +1,3 @@
-console.log(Vue);
-
 const { createApp } = Vue;
 
 createApp({
@@ -168,16 +166,17 @@ createApp({
           ],
         },
       ],
-      //Contatto selezionato
-      selectedContact: "",
+      // Indice attivo
+      activeIndex: 0,
     };
   },
   methods: {
-    // FUNZIONI
-    // Click per selezionare il contatto
-    selectContact(contact) {
-      this.selectedContact = contact;
-      console.log(contact.avatar);
+    getContactAvatar: function (contact) {
+      return "assets/img/avatar" + contact.avatar + ".jpg";
+    },
+    changeActiveContact: function (clickedIndex) {
+      this.activeIndex = clickedIndex;
+      console.log(clickedIndex);
     },
   },
 }).mount("#app");
