@@ -168,6 +168,7 @@ createApp({
       ],
       // Indice attivo
       activeIndex: 0,
+      searchMember: "",
     };
   },
   methods: {
@@ -202,5 +203,8 @@ createApp({
         }, 1000);
       }
     },
+
+    // Funzione per cercare contatti(?) da fare!!!
+    
   },
 }).mount("#app");
