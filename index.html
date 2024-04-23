@@ -161,17 +161,29 @@
         </div>
         <!-- /CHAT -->
 
+        <!-- Text Area -->
         <div class="right-footer">
           <div class="right-footer-icon">
             <i class="far fa-smile"></i>
           </div>
-          <input class="new-message-inputs" placeholder="Scrivi un messaggio" />
+
+          <!-- Inserisco @keyup.enter per inviare il messaggio premendo "invio" sulla testiera -->
+          <input
+            class="new-message-inputs"
+            v-model="newMessage"
+            @keyup.enter="sendMessage"
+            placeholder="Scrivi un messaggio"
+          />
+
+
           <div class="right-footer-icon">
             <i class="fa fa-microphone" aria-hidden="true"></i>
           </div>
         </div>
+        <!-- /Text Area -->
       </div>
-      <!-- /contenitore dx -->
+
+      <!-- /CONTAINER DX -->
     </div>
 
     <!-- CUSTOM SCRIPT -->

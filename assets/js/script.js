@@ -178,5 +178,29 @@ createApp({
       this.activeIndex = clickedIndex;
       console.log(clickedIndex);
     },
+
+    // Funzione per risposta messaggio
+    sendMessage() {
+      // Controllo che il messaggio inviato non sia vuoto
+      if (this.newMessage.trim() !== "") {
+        // Invio il messaggio usando l'indice attivo per aggiugnere il messaggio al suo array
+        this.contacts[this.activeIndex].messages.push({
+          // Il testo sarà uguale al campo newMessage
+          message: this.newMessage,
+          status: "sent",
+          date: new Date().toLocaleTimeString(),
+        });
+        // pulisco la textArea, dopo aver inviato il messaggio
+        this.newMessage = "";
+        // Funzione che mi simula una risposta, dopo 1 secondo
+        setTimeout(() => {
+          this.contacts[this.activeIndex].messages.push({
+            message: "Ok",
+            status: "received",
+            date: new Date().toLocaleTimeString(),
+          });
+        }, 1000);
+      }
+    },
   },
 }).mount("#app");
